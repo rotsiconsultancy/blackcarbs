@@ -99,15 +99,6 @@ img{display:block;max-width:100%}
   text-transform:uppercase;
   animation:loaderRise .7s ease both;
 }
-.loader-kicker-welcome{
-  display:block;
-  color:var(--gold);
-  font-size:14px;
-  font-weight:700;
-  letter-spacing:.26em;
-  text-transform:uppercase;
-  animation:loaderRise .8s ease both;
-}
 .loader-title{
   display:block;
   margin-top:12px;
@@ -115,7 +106,7 @@ img{display:block;max-width:100%}
   font-weight:700;
   line-height:.82;
   text-transform:uppercase;
-  animation:loaderRise .9s ease .12s both;
+  animation:loaderRise .8s ease .12s both;
 }
 .loader-line{
   width:min(460px,72vw);
@@ -325,14 +316,13 @@ h2{
 }
 .hero-strip{
   position:absolute;
-  inset:0 0 auto 0;
+  inset:auto 0 0 0;
   width:100%;
   display:flex;
   flex-direction:column;
   gap:18px;
   padding:18px;
-  will-change:transform;
-  animation:heroImageScroll 38s linear infinite;
+  animation:heroImageScroll 24s linear infinite;
 }
 .hero-strip img{
   width:100%;
@@ -356,7 +346,7 @@ h2{
 .sticker strong{display:block;color:var(--gold);font-size:18px;letter-spacing:.08em}
 .sticker span{display:block;margin-top:8px;color:var(--muted);font-size:17px;line-height:1.35}
 @keyframes float{50%{transform:translate3d(0,-18px,0) rotateX(2deg) rotateY(-3deg)}}
-@keyframes heroImageScroll{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@keyframes heroImageScroll{to{transform:translateY(-50%)}}
 section{position:relative;padding:94px 0}
 .section-head{display:grid;grid-template-columns:.9fr .72fr;gap:40px;align-items:end;margin-bottom:42px}
 .section-kicker{margin-bottom:14px}
@@ -489,42 +479,6 @@ section{position:relative;padding:94px 0}
 .step b{color:var(--gold);font-size:34px;line-height:1}
 .step h3{margin:0 0 8px;font-size:29px;text-transform:uppercase}
 .step p{margin:0;color:var(--muted);font-size:18px;line-height:1.36}
-.briefs{
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:18px;
-}
-.brief-card{
-  min-height:390px;
-  border:1px solid var(--line);
-  border-radius:28px;
-  overflow:hidden;
-  background:var(--panel);
-  opacity:0;
-  transform:translateY(28px);
-  transition:opacity .65s ease,transform .65s ease,border-color .25s ease;
-}
-.brief-card.revealed{opacity:1;transform:translateY(0)}
-.brief-card:hover{border-color:var(--line-strong)}
-.brief-card img{width:100%;height:210px;object-fit:cover}
-.brief-copy{padding:24px}
-.brief-copy h3{margin:0 0 10px;font-size:30px;line-height:.95;text-transform:uppercase}
-.brief-copy p{margin:0;color:var(--muted);font-size:18px;line-height:1.35}
-.brief-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  margin-top:18px;
-}
-.brief-meta span{
-  border:1px solid var(--line);
-  border-radius:999px;
-  padding:7px 10px;
-  color:var(--gold);
-  font-size:13px;
-  font-weight:700;
-  letter-spacing:.04em;
-}
 .showcase{display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:start}
 .feature{
   min-height:660px;
@@ -717,7 +671,7 @@ footer strong{color:var(--ink);letter-spacing:.08em}
   .navlinks{gap:12px;font-size:14px}
   .hero-grid{grid-template-columns:1fr}
   .hero-stage{min-height:620px}
-  .story,.section-head,.showcase,.media-band .container,.briefs{grid-template-columns:1fr}
+  .story,.section-head,.showcase,.media-band .container{grid-template-columns:1fr}
   .feature,.story-panel{position:relative;top:auto}
 }
 @media(max-width:820px){
@@ -763,8 +717,6 @@ footer strong{color:var(--ink);letter-spacing:.08em}
   .category h3{margin-top:42px}
   .category p{font-size:19px}
   .product,.gallery-grid{grid-template-columns:1fr}
-  .brief-card{min-height:auto}
-  .brief-card img{height:220px}
   .product img{width:100%;height:230px}
   .gallery-item:nth-child(n){grid-column:1/-1}
   .selector-stage{min-height:450px}
@@ -784,8 +736,7 @@ footer strong{color:var(--ink);letter-spacing:.08em}
 <body>
 <div class="site-loader" aria-hidden="true">
   <div class="loader-inner">
-    <span class="loader-kicker">Hi there.</span>
-    <span class="loader-kicker-welcome">Welcome to</span>
+    <span class="loader-kicker">Welcome to</span>
     <span class="loader-title">Black Carbon</span>
     <img class="loader-logo" src="assets/black-carbon-logo-dark.jpg" alt="">
     <span class="loader-line"></span>
@@ -937,44 +888,6 @@ footer strong{color:var(--ink);letter-spacing:.08em}
         <article class="step"><b>02</b><div><h3>Pick the format</h3><p>Choose a portrait, light piece, award, trophy, plaque, 3D print, hoodie, t-shirt, banner or branded gift.</p></div></article>
         <article class="step"><b>03</b><div><h3>Confirm the details</h3><p>Review the names, artwork, brand marks, message, material and finish before production begins.</p></div></article>
         <article class="step"><b>04</b><div><h3>Make it real</h3><p>Laser engraving, UV printing and 3D printing turn the approved idea into a finished item for pickup, delivery or event day.</p></div></article>
-      </div>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <div class="section-kicker reveal">Real order briefs</div>
-          <h2 class="reveal">What Black Carbon can quote from.</h2>
-        </div>
-        <p class="lead reveal">A stronger brief makes the item easier to price, design and produce. These examples show the kind of detail that turns a vague request into a clear custom order.</p>
-      </div>
-      <div class="briefs">
-        <article class="brief-card">
-          <img src="assets/engraved-portraits.jpg" alt="Engraved family portrait example">
-          <div class="brief-copy">
-            <h3>Family portrait gift</h3>
-            <p>Send the photo, names, date and short message. Black Carbon can shape it into an engraved keepsake or light portrait for a birthday, wedding or memorial moment.</p>
-            <div class="brief-meta"><span>photo supplied</span><span>engraving</span><span>acrylic or wood feel</span></div>
-          </div>
-        </article>
-        <article class="brief-card">
-          <img src="assets/gift-catalog-cover.jpg" alt="Corporate gift and award catalog visual">
-          <div class="brief-copy">
-            <h3>Awards day set</h3>
-            <p>Send the event name, award categories, recipient list and logo files. The output can become plaques, trophies, certificates or gift pieces with consistent branding.</p>
-            <div class="brief-meta"><span>logo files</span><span>recipient list</span><span>wood, acrylic, glass</span></div>
-          </div>
-        </article>
-        <article class="brief-card">
-          <img src="assets/branded-hoodies.jpg" alt="Branded hoodie sample">
-          <div class="brief-copy">
-            <h3>Team launch kit</h3>
-            <p>Send the campaign name, brand colors, quantities and delivery date. Black Carbon can map the idea across hoodies, t-shirts, banners and matching merch.</p>
-            <div class="brief-meta"><span>quantities</span><span>brand colors</span><span>apparel and banners</span></div>
-          </div>
-        </article>
       </div>
     </div>
   </section>
@@ -1142,7 +1055,7 @@ themeToggle?.addEventListener("click", () => {
   }
 });
 
-const revealables = document.querySelectorAll(".reveal,.product,.step,.gallery-item,.brief-card");
+const revealables = document.querySelectorAll(".reveal,.product,.step,.gallery-item");
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     entry.target.classList.toggle("revealed", entry.isIntersecting);
