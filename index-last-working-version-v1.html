@@ -703,39 +703,14 @@ footer strong{color:var(--ink);letter-spacing:.08em}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .cursor-light{
   position:fixed;
-  width:190px;
-  height:190px;
+  width:320px;
+  height:320px;
   border-radius:50%;
   pointer-events:none;
-  z-index:1;
-  border:1px solid rgba(196,138,42,.34);
-  background:
-    radial-gradient(circle at 50% 50%,rgba(196,138,42,.95) 0 3px,transparent 4px),
-    radial-gradient(circle at 50% 50%,rgba(196,138,42,.18),transparent 68%);
-  box-shadow:
-    0 0 0 1px rgba(248,246,240,.06) inset,
-    0 0 42px rgba(196,138,42,.18);
+  z-index:-1;
+  background:radial-gradient(circle,rgba(196,138,42,.16),transparent 64%);
   transform:translate(-50%,-50%);
-  opacity:.82;
-  mix-blend-mode:screen;
-  transition:opacity .2s ease, width .25s ease, height .25s ease;
-}
-.cursor-light:before{
-  content:"";
-  position:absolute;
-  inset:34px;
-  border:1px solid rgba(248,246,240,.1);
-  border-radius:50%;
-}
-[data-theme="light"] .cursor-light{
-  border-color:rgba(21,18,14,.26);
-  background:
-    radial-gradient(circle at 50% 50%,rgba(22,18,13,.9) 0 3px,transparent 4px),
-    radial-gradient(circle at 50% 50%,rgba(122,85,33,.13),transparent 68%);
-  box-shadow:
-    0 0 0 1px rgba(21,18,14,.05) inset,
-    0 0 38px rgba(122,85,33,.14);
-  mix-blend-mode:multiply;
+  opacity:.78;
 }
 :focus-visible{outline:2px solid var(--gold);outline-offset:4px}
 @media(max-width:1080px){
@@ -877,7 +852,7 @@ footer strong{color:var(--ink);letter-spacing:.08em}
         <img src="assets/media-banner.jpg" alt="">
         <img src="assets/engraved-examples.jpg" alt="">
       </div>
-      <!-- <div class="sticker"><strong>START WITH THE DETAIL</strong><span>A photo, a name, a logo or an event theme becomes the object people take home.</span></div> -->
+      <div class="sticker"><strong>START WITH THE DETAIL</strong><span>A photo, a name, a logo or an event theme becomes the object people take home.</span></div>
     </div>
   </div>
 </header>
